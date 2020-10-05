@@ -1,7 +1,7 @@
 ﻿using Moq;
 using MovieRatingApp.Core.ApplicationService.Implementations;
 using MovieRatingApp.Core.DomainService;
-using MovieRatingApp.Core.Entity;
+using MovieRatingApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -171,7 +171,7 @@ namespace MovieRatingApp.Core.ApplicationService
         }
 
         [Fact]
-        public void TestMoviesWithHighestNumberOfTopRates()
+        public void TestMoviesWithHighestNumberOfTopRates() //RADO DIFFERENT
         {
             //Arrange
             Mock<IMovieRepository> mock = new Mock<IMovieRepository>();
@@ -275,7 +275,7 @@ namespace MovieRatingApp.Core.ApplicationService
         }
 
         [Fact]
-        public void TestTopMoviesByReviewer()
+        public void TestTopMoviesByReviewer() // RADO DIFFERENT
         {
             //Arrange
             Mock<IMovieRepository> mock = new Mock<IMovieRepository>();
@@ -306,6 +306,11 @@ namespace MovieRatingApp.Core.ApplicationService
             var expectedResult = new List<int>() { 2, 3, 1 };
 
             Assert.True(actualResult.SequenceEqual(expectedResult), "The list of movies in order of rating (subsequently date) is NOT { 2, 3, 1 }.");
+
+            //RADO DIFFERENT
+            Assert.True(actualResult.ElementAt(0) == 2);
+            Assert.True(actualResult.ElementAt(1) == 3);
+            Assert.True(actualResult.ElementAt(2) == 1);
         }
 
         [Fact]

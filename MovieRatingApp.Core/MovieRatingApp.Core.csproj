@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MovieRatingApp.Core.Entities\MovieRatingApp.Core.Entity.csproj" />
+    <ProjectReference Include="..\MovieRatingApp.Core.Entities\MovieRatingApp.Core.Entities.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MovieRatingApp.Core.Entity
+namespace MovieRatingApp.Core.Entities
 {
     public class Rating
     {

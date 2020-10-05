@@ -60,7 +60,7 @@ namespace MovieRatingApp.Core.ApplicationService.Implementations
             return _movieRepository.GetAll().Count(p => p.MovieId == movie && p.Grade == rate);
         }
 
-        public List<int> GetMoviesWithHighestNumberOfTopRates()
+        public List<int> GetMoviesWithHighestNumberOfTopRates() // RADO VERY DIFFERENT
         {
             return _movieRepository.GetAll()
                 .OrderByDescending(p => GetNumberOfRates(p.MovieId, 5))
@@ -90,8 +90,9 @@ namespace MovieRatingApp.Core.ApplicationService.Implementations
                 .ToList();
         }
 
-        public List<int> GetTopMoviesByReviewer(int reviewer)
+        public List<int> GetTopMoviesByReviewer(int reviewer) //RADO DIFFERENT
         {
+            //ANNE DIFFERENT: 1 sec
             if (reviewer < 1)
                 throw new ArgumentException("The id of the reviewer has to be larger than 0.");
             return _movieRepository.GetAll()
@@ -100,6 +101,22 @@ namespace MovieRatingApp.Core.ApplicationService.Implementations
                 .ThenByDescending(p => p.Date)
                 .Select(p => p.MovieId)
                 .ToList();
+
+            /*
+            //RADO DIFFERENT: 2 sec
+            var reviewersReviews = _movieRepository.GetAll()
+                .Where(p => p.ReviewerId == reviewer)
+                .OrderByDescending(p => p.Grade)
+                .ThenByDescending(p => p.Date)
+                .ThenBy(r => r.MovieId); //this line and below
+
+            var idsList = new List<int>();
+
+            foreach (var review in reviewersReviews)
+                idsList.Add(review.MovieId);
+
+            return idsList;
+            */
         }
 
         public List<int> GetReviewersByMovie(int movie)

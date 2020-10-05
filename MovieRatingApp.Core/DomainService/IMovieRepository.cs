@@ -1,4 +1,4 @@
-﻿using MovieRatingApp.Core.Entity;
+﻿using MovieRatingApp.Core.Entities;
 using System.Collections.Generic;
 
 namespace MovieRatingApp.Core.DomainService
