@@ -9,7 +9,7 @@ using Xunit;
 
 namespace MovieRatingApp.Core.ApplicationService
 {
-    public class MovieServiceTests
+    public class MovieServiceFunctionalTests
     {
         [Fact]
         public void TestNumberOfReviewsFromReviewer()

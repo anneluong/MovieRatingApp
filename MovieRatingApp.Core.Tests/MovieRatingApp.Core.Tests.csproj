@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieRatingApp.Core\MovieRatingApp.Core.csproj" />
+    <ProjectReference Include="..\MovieRatingApp.Infrastructure.Static.Data\MovieRatingApp.Infrastructure.Static.Data.csproj" />
   </ItemGroup>
 
 </Project>
