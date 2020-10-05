@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieRatingApp.Core.Entities\MovieRatingApp.Core.Entity.csproj" />
+    <ProjectReference Include="..\MovieRatingApp.Core\MovieRatingApp.Core.csproj" />
+  </ItemGroup>
+
+</Project>
